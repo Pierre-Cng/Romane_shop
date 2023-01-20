@@ -1,3 +1,5 @@
 /project_env/
 .idea
 __pycache__
+.env
+
