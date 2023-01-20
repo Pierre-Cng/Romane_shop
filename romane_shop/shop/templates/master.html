@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="https://kit.fontawesome.com/c50346b1c1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="header_nav">
+                <a href="/" class="home_logo">
+                    <img src="{% static 'image/logo_chez_la_petite_romane.png' %}" width="200" height="200">
+                </a>
+                <input type="text" placeholder="Search..">
+                <a href="#user" class="user_logo">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="#user/favorite" class="favorite_logo">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="#user/basket" class="basket_logo">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+            </nav>
+        </header>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer>
+            <a href="/" class="home_logo"><img src="{% static 'image/logo_chez_la_petite_romane.png' %}" width="100" height="100"></a>
+            <nav class="footer-nav" id="myLinks">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </nav>
+            <p class="rights">© 2022 Pierre Congiu Consulting</p>
+            <div class="networks">
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-github"></a>
+                <a href="#" class="fa fa-envelope"></a>
+            </div>
+        </footer>
+    </body>
 </html>

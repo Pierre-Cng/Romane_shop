@@ -9,10 +9,11 @@ def home(request):
     return HttpResponse(template.render())
 
 def gallery(request, category):
-    products = Product.objects.get(category=category)
+    # products = Product.objects.get(category=category)
     template = loader.get_template("gallery.html")
     context = {
-        'products': products,
+        'category': category,
+        # 'products': products,
     }
     return HttpResponse(template.render(context, request))
 

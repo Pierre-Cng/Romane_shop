@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "master.html" %}
 
-</body>
-</html>
+{% load static %}
+
+{% block content %}
+    <h1>Home page</h1>
+    <nav  class="category_nav">
+        {% with 'Paintings Fanarts Clothes Shoes Accessories' as list %}
+            {% for category in list.split %}
+                <a href="gallery/{{ category }}">
+                    <img src="{% static 'image/logo_{{ category }}.png' %}" style="width:100%">
+                    <h3>{{ category }}</h3>
+                </a>
+            {% endfor %}
+        {% endwith %}
+    </nav>
+    <div class="news_section">
+        <h2>New article:</h2>
+        <p> {% lorem 1 p %} </p>
+    </div>
+    <div class="about_section">
+        <h2>About us:</h2>
+        <p> {% lorem 1 p %} </p>
+    </div>
+    <div class="reviews">
+        <h2>Reviews:</h2>
+        <p> {% lorem 1 p %} </p>
+    </div>
+{% endblock %}
